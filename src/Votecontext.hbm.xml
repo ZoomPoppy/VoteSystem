@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="enity.Votecontext" table="votecontext" schema="" catalog="votesys">
+        <id name="votecontextId">
+            <column name="votecontext_id" sql-type="int" not-null="true"/>
+        </id>
+        <property name="context">
+            <column name="context" sql-type="varchar" length="50"/>
+        </property>
+        <property name="count">
+            <column name="Count" sql-type="int"/>
+        </property>
+        <property name="voteId">
+            <column name="vote_id" sql-type="int"/>
+        </property>
+    </class>
+</hibernate-mapping>

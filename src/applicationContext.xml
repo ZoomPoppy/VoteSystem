@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+              <property name="configLocation" >
+                     <value >
+                            classpath:hibernate.cfg.xml
+                     </value>
+              </property>
+       </bean>
+       <bean id="adminDAO" class="DAO.impl.AdminDAOImpl">
+              <property name="sessionFactory" ref="sessionFactory"/>
+       </bean>
+       <bean id="voteDAO" class="DAO.impl.VoteDAOImpl">
+              <property name="sessionFactory" ref="sessionFactory"/>
+       </bean>
+       <bean id="voterDAO" class="DAO.impl.VoterDAOImpl">
+              <property name="sessionFactory" ref="sessionFactory"/>
+       </bean>
+       <bean id="voteContextDAO" class="DAO.impl.VoteContextDAOImpl">
+              <property name="sessionFactory" ref="sessionFactory"/>
+       </bean>
+       <!--service-->
+       <bean id="adminService" class="service.impl.AdminServiceImpl">
+              <property name="adminDAO" ref="adminDAO"/>
+       </bean>
+       <bean id="voteService" class="service.impl.VoteServieceImpl">
+              <property name="voteDAO" ref="voteDAO"/>
+       </bean>
+       <bean id="voterService" class="service.impl.VoterServiceImpl">
+              <property name="voterDAO" ref="voterDAO"/>
+       </bean>
+       <bean id="voteContextService" class="service.impl.VoteContextServiceImpl">
+              <property name="voteContextDAO" ref="voteContextDAO"/>
+       </bean>
+       <!-- Login 类进行配置-->
+       <bean id="login" class="action.Login">
+              <property name="adminService" ref="adminService"/>
+              <property name="voteService" ref="voteService"/>
+       </bean>
+       <bean id="logout" class="action.Logout"/>
+</beans>
