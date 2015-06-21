@@ -6,10 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
- * Created by zz on 2015/6/17.
+ * Created by zz on 2015/6/20.
  */
 @Entity
-public class Vote {
+public class Vote implements java.io.Serializable {
     private int mVoteId;
     private String mTitle;
     private String mCreatedate;

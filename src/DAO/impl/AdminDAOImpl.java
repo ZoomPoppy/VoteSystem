@@ -38,7 +38,13 @@ public class AdminDAOImpl extends HibernateDaoSupport implements AdminDAO {
 
     @Override
     public void updateLoginTime(Admin admin) {
-        getHibernateTemplate().update("logintime",admin);
+//        ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
+//        SessionFactory sessionFactory = (SessionFactory) context.getBean("sessionFactory");
+//        Session session = sessionFactory.openSession();
+//        String datestring = admin.getLogintime();
+//        String name = admin.getName();
+//        session.createQuery("update Admin set logintime ='"+datestring+"'where name='"+name+"'");
+          getHibernateTemplate().update(admin);
     }
 
     @Override

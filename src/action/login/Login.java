@@ -1,4 +1,4 @@
-package action;
+package action.login;
 
 import DAO.Count;
 import action.rootaction.AdminRoot;
@@ -32,12 +32,11 @@ public class Login extends AdminRoot{
             count.setMultiCount((Long) voteService.findVoteCountByType(new Integer(0)));
             count.setAllCount(voteService.findVoteCount());
             session.setAttribute("count",count);
-            //当前时间
             Date date = Calendar.getInstance().getTime();
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String dateString = format.format(date);
             admin.setLogintime(dateString);
-           // adminService.updateLoginTime(admin);
+            adminService.updateLoginTime(admin);
             return SUCCESS;
 
         }

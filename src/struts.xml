@@ -10,12 +10,57 @@
         <constant name="struts.i18n.encoding" value="GBK"/>
         <constant name="struts.custom.i18n.resources" value="globalMessages"/>
         <package name="default" namespace="/" extends="struts-default">
-                <action name="login" class="action.Login">
-                        <result name="success">/index.jsp</result>
+                <interceptors>
+                        <interceptor name="SessionInterceptor" class="action.SessionInterceptor"/>
+                </interceptors>
+                <action name="login" class="action.login.Login">
+                        <result name="success">/main/frame.jsp</result>
                         <result name="error">/login.jsp</result>
                 </action>
-                <action name="logout" class="action.Logout">
+                <action name="logout" class="action.login.Logout">
                         <result type="redirect">/login.jsp</result>
+                </action>
+                <action name="createAdmin" class="CreatAdmin">
+                        <result name="input">/createadmin.jsp</result>
+                        <result type="chain">createAdmin</result>
+                        <interceptor-ref name="defaultStack"/>
+                        <interceptor-ref name="SessionInterceptor"/>
+                </action>
+                <action name="newVote" class="action.vote.newVote">
+                        <result name="success">newvotecontext.jsp</result>
+                </action>
+                <action name="newVoteContext" class="action.vote.newVoteContext">
+                        <!--<result type="chain"></result>-->
+                        <interceptor-ref name="defaultStack"/>
+                        <interceptor-ref name="tokenSession"/>
+                        <interceptor-ref name="SessionInterceptor"/>
+                </action>
+                <action name="findVote" class="action.vote.FindVote">
+                        <result>showresult.jsp</result>
+                        <result name="seachnull">searchvote.jsp</result>
+                        <interceptor-ref name="defaultStack"/>
+                        <interceptor-ref name="SessionInterceptor"/>
+                </action>
+
+                <action name="searchVote" class="action.vote.SearchVote">
+                        <result>showresult.jsp</result>
+                        <result name="searchnull">searchvote.jsp</result>
+                        <interceptor-ref name="defaultStack"/>
+                        <interceptor-ref name="SessionInterceptor"/>
+                </action>
+
+                <action name="showVoting" class="action.vote.ShowVoting">
+                        <result name="voteclose">voteclose.jsp</result>
+                        <result type="chain">showVotingContext</result>
+                </action>
+                <action name="showVotingContext" class="action.vote.ShowVotingContext">
+                        <result>showvoting.jsp</result>
+                </action>
+                <action name="voting" class="action.vote.Voting">
+                        <!--<result type="chain">addVoter</result>-->
+                </action>
+                <action name="showVotingResult" class="action.vote.ShowVotingResult">
+                        <result>showvotingresult.jsp</result>
                 </action>
         </package>
 

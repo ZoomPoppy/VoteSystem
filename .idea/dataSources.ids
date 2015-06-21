@@ -26,6 +26,7 @@
       <foreign-key name="vote_ibfk_1" columns="admin_id" ref-table="admin" ref-schema="" ref-catalog="votesys" ref-columns="admin_id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="votecontext_ibfk_1" table="votecontext" schema="" catalog="votesys" columns="vote_id"/>
       <exported-key name="voter_ibfk_1" table="voter" schema="" catalog="votesys" columns="vote_id"/>
+      <index name="vote_id_index" unique="false" columns="vote_id"/>
     </table>
     <table name="votecontext" schema="" catalog="votesys" type="TABLE">
       <column name="votecontext_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>

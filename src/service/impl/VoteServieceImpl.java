@@ -10,6 +10,8 @@ import java.util.List;
  * Created by zz on 2015/6/17.
  */
 public class VoteServieceImpl implements VoteService {
+    private VoteDAO mVoteDAO;
+
     public VoteDAO getVoteDAO() {
         return mVoteDAO;
     }
@@ -18,7 +20,6 @@ public class VoteServieceImpl implements VoteService {
         mVoteDAO = voteDAO;
     }
 
-    private VoteDAO mVoteDAO;
     @Override
     public void addVote(Vote vote) {
         mVoteDAO.addVote(vote);

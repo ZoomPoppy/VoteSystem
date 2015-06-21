@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1215991240">
+  <component name="DataSourceManagerImpl" format="xml" hash="4089562683">
     <data-source source="LOCAL" name="MySQL - votesys@localhost" uuid="69dbb428-25bd-4481-a523-451ea29e45bc">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
