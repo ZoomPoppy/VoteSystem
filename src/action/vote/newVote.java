@@ -35,7 +35,8 @@ public class newVote extends VoteRoot {
         }
         else {
             session.setAttribute("vote",vote);
-            session.setAttribute("contextCount",contextCount);
+            contextCount = (Integer) session.getAttribute("contextCount");
+            session.setAttribute("contextcount",contextCount);
             return SUCCESS;
         }
     }

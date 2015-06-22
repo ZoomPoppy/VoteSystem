@@ -3,7 +3,7 @@
 <html>
 	<style type="text/css">
 body {
-	background-color: #758fde;
+	background-color: #355fde;
 }
 a { color: #000000; font-size: 12pt; text-decoration: none}
 </style>

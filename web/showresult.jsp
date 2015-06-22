@@ -4,22 +4,22 @@
 <html>
 <style type="text/css">
     <!--
-    body {
-        background-color: #869de3;
-    }
+    /*body {*/
+        /*background-color: #869de3;*/
+    /*}*/
     -->
     a { font-size: 12pt; text-decoration: none}
 </style>
 <body>
-<a href="frame/main.jsp">
-    <s:property value="%{getText('mainpage')}" />
+<a href="main.jsp">
+    <s:property value="%{getText('主页')}" />
 </a>
 >>>
-<s:property value="%{getText('votemanage')}" />
+<s:property value="%{getText('所有投票')}" />
 <center>
     <br><br>
     <table border="1" width="75%">
-        <s:iterator value="#request.list2" status="st">
+        <s:iterator value="#request.listInfo" status="st">
             <s:if test="#st.first==true">
                 <tr bgcolor="#5e80e8" bordercolor="#5e80e8">
                     <td>
@@ -92,10 +92,9 @@
                 </td>
                 <td>
                     <div align="center">
-                        <a
-                                href='<s:url action="findVote"><s:param name="flag" value="1"/>
-									<s:param name="voteId" value="voteId" /></s:url>'>
-                            <s:property value="%{getText('edit')}" /></a>
+                        <a href='<s:url action="findOneVote"><s:param name="flag" value="1"/>
+									<s:param name="voteId" value="voteId" /></s:url>' >
+                            <s:property value="%{getText('编辑')}" /></a>
                     </div>
                 </td>
             </tr>

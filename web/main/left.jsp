@@ -5,7 +5,7 @@
 		<style type="text/css">
 <!--
 body {
-	background-color: #738edf;
+	background-color: #355fde;
 }
 a { font-size: 12pt; text-decoration: none}
 .STYLE2 {color: #2A00AA}
@@ -27,8 +27,8 @@ a { font-size: 12pt; text-decoration: none}
 					现在的时间是：<br><br>
 					<%
 					java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-					java.util.Date currentTime = new java.util.Date();//得到当前系统时间
-					String strdate = formatter.format(currentTime); //将日期时间格式化
+					java.util.Date currentTime = new java.util.Date();
+					String strdate = formatter.format(currentTime);
 					%>
 					<%= strdate%>
 					<br>

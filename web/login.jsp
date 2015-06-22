@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>登录界面模板</title>
+<title>登录界面</title>
 
 <meta name="viewport" content="width=device-width">
 
@@ -12,13 +12,13 @@
 </head>
 <body>
 
-<div class="login">
-	<form action="login.action" id="form">
+<div class="login" >
+	<form  action="login.action" id="form" >
 		<div class="logo"></div>
 		
 		<div class="login_form">
 			<div class="user">
-				<input class="text_value" value="" name="name" type="text" id="username">
+				<input class="text_value" value="" name="name" type="text" id="username" >
 				<input class="text_value" value="" name="password" type="password" id="password">
 			</div>
 			<button class="button" id="submit" type="submit">登录</button>

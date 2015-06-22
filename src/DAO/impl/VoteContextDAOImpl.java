@@ -20,7 +20,7 @@ public class VoteContextDAOImpl extends HibernateDaoSupport implements VoteConte
     @Override
     public List<Votecontext> findVoteContextByVoteId(Vote vote) {
         Integer vote_id = vote.getVoteId();
-        String hql = "from VOtecontext as voteContext where voteContext.voteId=?";
+        String hql = "from Votecontext as voteContext where voteContext.voteId=?";
         List<Votecontext> list = (List<Votecontext>) getHibernateTemplate().find(hql,vote_id);
         return list;
     }

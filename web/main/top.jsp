@@ -17,7 +17,7 @@ function cMenubar(st)
 	</head>
 	<style type="text/css">
 body {
-	background-color: #758fde;
+	background-color: #759fde;
 }
 a { color: #000000; font-size: 12pt; text-decoration: none}
 </style>
@@ -40,35 +40,35 @@ a { color: #000000; font-size: 12pt; text-decoration: none}
 					onmouseout="cMenubar(this)">
 					<div align="center">
 						<a href="main.jsp" target="mainFrame"> <s:property
-							value="%{getText('mainpage')}" /> </a>
+							value="主页" /> </a>
 					</div>
 				</td>
 				<td width="20%" height="20" onMouseOver="sMenubar(this)"
 					onmouseout="cMenubar(this)">
 					<div align="center">
-						<a href="../findVote.action" target="mainFrame"> <s:property
+						<a href="findVote.action" target="mainFrame"> <s:property
 							value="%{getText('votemanage')}" /> </a>
 					</div>
 				</td>
 				<td width="20%" height="20" onMouseOver="sMenubar(this)"
 					onmouseout="cMenubar(this)">
 					<div align="center">
-						<a href="../vote/newvote.jsp" target="mainFrame"> <s:property
-							value="%{getText('createvote')}" /> </a>
+						<a href="../newvote.jsp" target="mainFrame"> <s:property
+							value="新建投票" /> </a>
 					</div>
 				</td>
 				<td width="20%" height="20" onMouseOver="sMenubar(this)"
 					onmouseout="cMenubar(this)">
 					<div align="center">
-						<a href="../vote/searchvote.jsp" target="mainFrame"> <s:property
-							value="%{getText('searchvote')}" /> </a>
+						<a href="../searchvote.jsp" target="mainFrame"> <s:property
+							value="查询投票" /> </a>
 					</div>
 				</td>
 				<td width="20%" height="20" onMouseOver="sMenubar(this)"
 					onmouseout="cMenubar(this)">
 					<div align="center">
 					<a href="../admin/adminmanage.jsp" target="mainFrame"> <s:property
-							value="%{getText('adminmanage')}" /> </a>
+							value="登陆管理" /> </a>
 					</div>
 				</td>
 			</tr>

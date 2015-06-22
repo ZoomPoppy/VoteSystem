@@ -14,7 +14,7 @@
                         <interceptor name="SessionInterceptor" class="action.SessionInterceptor"/>
                 </interceptors>
                 <action name="login" class="action.login.Login">
-                        <result name="success">/main/frame.jsp</result>
+                        <result name="success">main.jsp</result>
                         <result name="error">/login.jsp</result>
                 </action>
                 <action name="logout" class="action.login.Logout">
@@ -26,14 +26,31 @@
                         <interceptor-ref name="defaultStack"/>
                         <interceptor-ref name="SessionInterceptor"/>
                 </action>
-                <action name="newVote" class="action.vote.newVote">
+                <action name="newvoteValidate"
+                        class="action.vote.NewvoteValidate">
+                        <result name="input">newvote.jsp</result>
+                        <result name="success" type="chain">newVote</result>
+                        <interceptor-ref name="defaultStack" />
+                        <interceptor-ref name="SessionInterceptor" />
+                </action>
+                <action name="newVote" class="newVote">
                         <result name="success">newvotecontext.jsp</result>
+                        <result name="addVoteError">newvote.jsp</result>
+                        <result name="invalid.token">login.jsp</result>
+                        <interceptor-ref name="defaultStack" />
+                        <interceptor-ref name="tokenSession" />
+                        <interceptor-ref name="SessionInterceptor" />
                 </action>
                 <action name="newVoteContext" class="action.vote.newVoteContext">
-                        <!--<result type="chain"></result>-->
+                        <result type="chain">showVote</result>
                         <interceptor-ref name="defaultStack"/>
                         <interceptor-ref name="tokenSession"/>
                         <interceptor-ref name="SessionInterceptor"/>
+                </action>
+                <action name="showVote" class="action.vote.ShowVote">
+                        <result name="showvote">managevote.jsp</result>
+                        <interceptor-ref name="defaultStack" />
+                        <interceptor-ref name="SessionInterceptor" />
                 </action>
                 <action name="findVote" class="action.vote.FindVote">
                         <result>showresult.jsp</result>
@@ -61,6 +78,11 @@
                 </action>
                 <action name="showVotingResult" class="action.vote.ShowVotingResult">
                         <result>showvotingresult.jsp</result>
+                </action>
+                <action name="findOneVote" class="action.vote.FindOneVote">
+                        <result name="success" type="redirectAction">showVote</result>
+                        <interceptor-ref name="defaultStack" />
+                        <interceptor-ref name="SessionInterceptor" />
                 </action>
         </package>
 

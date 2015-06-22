@@ -6,6 +6,7 @@ import enity.Votecontext;
 import org.apache.struts2.ServletActionContext;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * Created by zz on 2015/6/19.
@@ -17,7 +18,11 @@ public class newVoteContext extends VoteContextRoot {
         Vote vote = (Vote) session.getAttribute("vote");
         //Ìí¼Óvote
         voteService.addVote(vote);
+
         Integer vote_id = voteService.findIdByTitle(vote);
+        List<Vote> list =  voteService.findVoteByTitle(vote);
+        Vote vote1 = list.get(0);
+        session.setAttribute("vote",vote1);
         String [] voteContext = context;
         for (int i = 0 ;i<voteContext.length;i++){
             Votecontext votecontext = new Votecontext();

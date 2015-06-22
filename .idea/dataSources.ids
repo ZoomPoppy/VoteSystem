@@ -8,7 +8,7 @@
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
     <schema name="" catalog="votesys"/>
     <table name="admin" schema="" catalog="votesys" type="TABLE">
-      <column name="admin_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="admin_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
       <column name="password" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
       <column name="logintime" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
@@ -16,32 +16,31 @@
       <exported-key name="vote_ibfk_1" table="vote" schema="" catalog="votesys" columns="admin_id"/>
     </table>
     <table name="vote" schema="" catalog="votesys" type="TABLE">
-      <column name="vote_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="vote_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="title" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
       <column name="createdate" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
       <column name="type" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="publish" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="admin_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="vote_id"/>
-      <foreign-key name="vote_ibfk_1" columns="admin_id" ref-table="admin" ref-schema="" ref-catalog="votesys" ref-columns="admin_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="vote_ibfk_1" columns="admin_id" ref-table="admin" ref-schema="" ref-catalog="votesys" ref-columns="admin_id" update-rule="0" delete-rule="0" deferrability="2"/>
       <exported-key name="votecontext_ibfk_1" table="votecontext" schema="" catalog="votesys" columns="vote_id"/>
       <exported-key name="voter_ibfk_1" table="voter" schema="" catalog="votesys" columns="vote_id"/>
-      <index name="vote_id_index" unique="false" columns="vote_id"/>
     </table>
     <table name="votecontext" schema="" catalog="votesys" type="TABLE">
-      <column name="votecontext_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="votecontext_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="context" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
       <column name="Count" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="vote_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="votecontext_id"/>
-      <foreign-key name="votecontext_ibfk_1" columns="vote_id" ref-table="vote" ref-schema="" ref-catalog="votesys" ref-columns="vote_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="votecontext_ibfk_1" columns="vote_id" ref-table="vote" ref-schema="" ref-catalog="votesys" ref-columns="vote_id" update-rule="0" delete-rule="0" deferrability="2"/>
     </table>
     <table name="voter" schema="" catalog="votesys" type="TABLE">
-      <column name="Id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="Id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="vote_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="Ip" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12" remarks="5oqV56Wo6ICFaXA="/>
       <primary-key name="PRIMARY" columns="Id"/>
-      <foreign-key name="voter_ibfk_1" columns="vote_id" ref-table="vote" ref-schema="" ref-catalog="votesys" ref-columns="vote_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="voter_ibfk_1" columns="vote_id" ref-table="vote" ref-schema="" ref-catalog="votesys" ref-columns="vote_id" update-rule="0" delete-rule="0" deferrability="2"/>
     </table>
   </data-source>
 </component>

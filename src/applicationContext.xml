@@ -79,42 +79,6 @@
                      </list>
               </property>
        </bean>
-       <!--<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">-->
-              <!--<property name="sessionFactory">-->
-                     <!--<ref bean="sessionFactory"/>-->
-              <!--</property>-->
-       <!--</bean>-->
-       <!--<tx:advice id="txAdvice" transaction-manager="transactionManager">-->
-                <!--<tx:attributes>-->
-                    <!--<tx:method name="add*" propagation="REQUIRED" rollback-for="Exception,SmoException,BmoException,DaoException" />-->
-                    <!--<tx:method name="del*" propagation="REQUIRED" rollback-for="Exception,SmoException,BmoException,DaoException" />-->
-                    <!--<tx:method name="upd*" propagation="REQUIRED" rollback-for="Exception,SmoException,BmoException,DaoException" />-->
-                       <!--<tx:method name="*" propagation="SUPPORTS" read-only="true" />-->
-               <!--</tx:attributes>-->
-       <!--</tx:advice>-->
-       <!--<aop:config>-->
-              <!--<aop:pointcut id="servicesPointcut" expression="execution(* service.*.*(..))"/>-->
-       <!--</aop:config>-->
-              <!--<bean id="transactionManager"-->
-             <!--class="org.springframework.orm.hibernate3.HibernateTransactionManager">-->
-              <!--<property name="sessionFactory">-->
-                     <!--<ref bean="sessionFactory" />-->
-              <!--</property>-->
-       <!--</bean>-->
-       <!--<tx:advice id="txAdvice" transaction-manager="transactionManager">-->
-              <!--　　<tx:attributes>-->
-              <!--　　<tx:method name="*" propagation="REQUIRED" read-only="true"/>-->
-              <!--　　<tx:method name="add*" propagation="REQUIRED"/>-->
-              <!--　　<tx:method name="del*" propagation="REQUIRED"/>-->
-              <!--　　<tx:method name="update*" propagation="REQUIRED"/>-->
-              <!--　　<tx:method name="save*" propagation="REQUIRED"/>-->
-              <!--　　</tx:attributes>-->
-       <!--</tx:advice>-->
-       <!--<tx:annotation-driven transaction-manager="transactionManager" />-->
-       <!--<aop:config>-->
-              <!--　　<aop:pointcut id="allMethods" expression="execution(* service.*.*(..))" />-->
-              <!--　　<aop:advisor advice-ref="txAdvice" pointcut-ref="allMethods" />-->
-       <!--</aop:config>-->
 
        <bean id="adminDAO" class="DAO.impl.AdminDAOImpl">
               <property name="sessionFactory" ref="sessionFactory"/>
@@ -183,5 +147,13 @@
        <bean id="showVotingResult" class="action.vote.ShowVotingResult">
               <property name="voteService" ref="voteService"/>
               <property name="voteContextService" ref="voteContextService"/>
+       </bean>
+
+       <bean id="NewvoteValidate" class="action.vote.NewvoteValidate">
+
+       </bean>
+       <bean id="findOneVote" class="action.vote.FindOneVote">
+              <property name="adminService" ref="adminService"/>
+              <property name="voteService" ref="voteService"/>
        </bean>
 </beans>
