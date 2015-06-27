@@ -8,10 +8,9 @@ import org.apache.struts2.ServletActionContext;
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
-/**
+/**n
  * Created by zz on 2015/6/19.
  */
 public class newVote extends VoteRoot {
@@ -28,15 +27,14 @@ public class newVote extends VoteRoot {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String dateString  = format.format(date);
         vote.setCreatedate(dateString);
-        List l = voteService.findVoteByTitle(vote);
-        if (l!=null){
+        List<Vote> list = voteService.haveSameTitle(vote);
+        if (list!=null){
             addActionError(getText("voteExist"));
             return ADDVOTEERROR;
         }
         else {
             session.setAttribute("vote",vote);
-            contextCount = (Integer) session.getAttribute("contextCount");
-            session.setAttribute("contextcount",contextCount);
+            session.setAttribute("contextCount",contextCount);
             return SUCCESS;
         }
     }

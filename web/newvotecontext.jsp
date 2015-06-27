@@ -9,10 +9,10 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
 <html><style type="text/css">
-  <!--
-  body {
-    background-color: #869de3;
-  }
+  /*<!--*/
+  /*body {*/
+    /*background-color: #869de3;*/
+  /*}*/
   -->
   a { font-size: 12pt; text-decoration: none}
 </style>
@@ -29,7 +29,7 @@
     <s:token/>
     <s:bean name="org.apache.struts2.util.Counter" id="counter">
       <s:param name="first" value="1" />
-      <s:param name="last" value="#session.contextcount"/>
+      <s:param name="last" value="#session.contextCount"/>
       <s:iterator>
         <s:property value="%{getText('µЪ')}" />
         <s:property /><s:property value="%{getText('По')}" />

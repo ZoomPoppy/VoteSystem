@@ -57,6 +57,11 @@
                             <s:property value="%{getText('edit')}" />
                         </div>
                     </td>
+                    <td>
+                        <div align="center">
+                            <s:property value="%{getText('ͶƱ')}"/>
+                        </div>
+                    </td>
                 </tr>
             </s:if>
             <tr>
@@ -95,6 +100,13 @@
                         <a href='<s:url action="findOneVote"><s:param name="flag" value="1"/>
 									<s:param name="voteId" value="voteId" /></s:url>' >
                             <s:property value="%{getText('�༭')}" /></a>
+                    </div>
+                </td>
+                <td>
+                    <div align="center">
+                        <a href='<s:url action="voting"><s:param name="voting" value="1"/>
+									<s:param name="voteId" value="voteId" /></s:url>' >
+                            <s:property value="%{getText('ͶƱ')}" /></a>
                     </div>
                 </td>
             </tr>

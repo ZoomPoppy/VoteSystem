@@ -16,4 +16,5 @@ public interface VoteService {
     public List<Vote> findVoteByTitle(Vote vote);
     public Object findVoteCountByType(Integer type);
     public Long findVoteCount();
+    public List<Vote> haveSameTitle(Vote vote);
 }

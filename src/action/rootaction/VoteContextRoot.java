@@ -19,6 +19,15 @@ public class VoteContextRoot extends ActionSupport {
     protected Map map;
     protected Integer type;
     protected List<VotingInfo> votingInfoList;
+    protected Integer publish;
+
+    public Integer getPublish() {
+        return publish;
+    }
+
+    public void setPublish(Integer publish) {
+        this.publish = publish;
+    }
 
     public List<VotingInfo> getVotingInfoList() {
         return votingInfoList;

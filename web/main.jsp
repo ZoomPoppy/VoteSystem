@@ -11,11 +11,12 @@
 <html>
 <head>
     <title></title>
-
+  <style>
+    body{width: 100%;height: 100%;overflow: hidden;margin: 0;font-family: 'microsoft yahei';background-image:url(../images/login_bg.jpg);}  </style>
 </head>
 <body>
 <center>
-  <h1>投票管理系统</h1>
+  <h1 style="color: #f5f6f7;">投票管理系统</h1>
 </center>
 现在的时间是：<br><br>
 <%
@@ -39,16 +40,18 @@
 
 <p>
 登陆时间：<STRONG><s:property value="#session.admin.logintime" /></STRONG>
+
+
 </p>
 
-<input type="button" onclick="javascript:newVote()" value="新建投票">
+<input type="button" onclick="javascript:newVote()" value="发起投票">
 <script>
 
   function newVote(){
     window.location.href = "newvote.jsp";
   }
 </script>
-<input type="button" onclick="javascript:findVote()" value="查找投票">
+<input type="button" onclick="javascript:findVote()" value="查看所有投票">
 <script>
 
 

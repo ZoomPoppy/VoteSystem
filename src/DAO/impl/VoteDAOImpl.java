@@ -71,4 +71,14 @@ public class VoteDAOImpl extends HibernateDaoSupport implements VoteDAO {
         }
         return new Long(0);
     }
+
+    @Override
+    public List<Vote> haveSameTitle(Vote vote) {
+        String hql = "from Vote as vote where vote.title = ?";
+        List<Vote> list = (List<Vote>) getHibernateTemplate().find(hql,vote.getTitle());
+        if (list.size()==0){
+            return null;
+        }
+        else  return list;
+    }
 }

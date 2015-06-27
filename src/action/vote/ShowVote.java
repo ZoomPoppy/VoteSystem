@@ -19,19 +19,14 @@ public class ShowVote extends VoteContextRoot {
     @Override
     public String execute() throws Exception {
         HttpSession session = ServletActionContext.getRequest().getSession();
-        // 从session中获得投票信息
         Vote vote = (Vote) session.getAttribute("vote");
-        // 通过投票编号查找投票子选项信息并赋给list
         List<Votecontext> list = voteContextService.findVoteContextByVoteId(vote);
         map = new HashMap();
         for (int i = 0; i < list.size(); i++) {
             map.put(list.get(i).getVotecontextId(), list.get(i).getContext());
         }
         setMap(map);
-        // 将存有投票子选项信息的list存入session的“list”
         session.setAttribute("list", list);
-        // 将投票类型，状态发送到对应页面
-        // setFlag(flag);
         setType(vote.getType());
         return SHOWVOTE;
     }

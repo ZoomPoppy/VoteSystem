@@ -11,32 +11,38 @@
     a { font-size: 12pt; text-decoration: none}
 </style>
 <body>
-<center>
+
     <div align="left">
         <a href="main.jsp">
             <s:property value="%{getText('主页')}" />
-        </a>>>><s:property value="%{getText('编辑页面')}" />
+        </a>
+        >>><a href="findVote.action"><s:property value="%{getText('所有投票信息')}"></s:property> </a>
+        >>> <s:property value="%{getText('编辑页面')}" />
     </div>
     <font color="red"><s:actionerror /></font>
-    <s:form action="updateVoteContext" theme="simple">
+<center>
+    <s:form action="updateVoteContext"  theme="simple">
         <s:token />
        投票主题：<s:property value="#session.vote.title" />
         <br>
         <br>
-        <a
-                href='<s:url action="addOneVoteContext"><s:param name="voteId" value="#session.vote.voteId" /></s:url>'><s:submit value="添加投票选项"/></a>
+        <span style="position:relative  ;">
+                <a style="color: #2A00AA;" href='<s:url action="addOneVoteContext"><s:param name="voteId" value="#session.vote.voteId" /></s:url>'><s:property value="%{getText('添加投票选项')}" /></a>
+
+        </span>
+
         <table>
             <s:iterator value="#session.list">
                 <tr>
                     <td>
-                        <s:property value="%{getText('投票选项')}" />
-                        <s:textfield name="context" value="%{context}" />
-                    </td>
-                    <td>
-                        <a
-                                href='<s:url action="delVoteContext"><s:param name="voteId" value="#session.vote.voteId" /><s:param name="votecontextId" value="votecontextId" /></s:url>'>
-                            <s:submit  value="删除"/>
-                        </a>
+                        <p>
+                            投票选项:&nbsp;&nbsp;<s:textfield name="context" value="%{context}" />
+                            <a style="color: red";
+                                    href='<s:url action="delVoteContext"><s:param name="voteId" value="#session.vote.voteId" /><s:param name="voteContextId" value="votecontextId" /></s:url>'>
+                                <s:property   value="%{getText('删除')}"/>
+                            </a>
+                        </p>
+
                     </td>
                 </tr>
             </s:iterator>

@@ -59,4 +59,9 @@ public class VoteServieceImpl implements VoteService {
     public Long findVoteCount() {
         return mVoteDAO.findVoteCount();
     }
+
+    @Override
+    public List<Vote> haveSameTitle(Vote vote) {
+        return mVoteDAO.haveSameTitle(vote);
+    }
 }

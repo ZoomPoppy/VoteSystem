@@ -32,7 +32,7 @@ public class VoteContextDAOImpl extends HibernateDaoSupport implements VoteConte
 
     @Override
     public void updateVoteContext(Votecontext votecontext) {
-        getHibernateTemplate().saveOrUpdate("VoteContextId", votecontext);
+        getHibernateTemplate().update(votecontext);
     }
 
     @Override

@@ -9,13 +9,16 @@
         <constant name="struts.devMode" value="true"/>
         <constant name="struts.i18n.encoding" value="GBK"/>
         <constant name="struts.custom.i18n.resources" value="globalMessages"/>
-        <package name="default" namespace="/" extends="struts-default">
+        <package name="default"  extends="struts-default">
                 <interceptors>
                         <interceptor name="SessionInterceptor" class="action.SessionInterceptor"/>
                 </interceptors>
+                <global-results>
+                        <result name="loginPage">/login.jsp</result>
+                </global-results>
                 <action name="login" class="action.login.Login">
                         <result name="success">main.jsp</result>
-                        <result name="error">/login.jsp</result>
+                        <result name="error">/error.jsp</result>
                 </action>
                 <action name="logout" class="action.login.Logout">
                         <result type="redirect">/login.jsp</result>
@@ -26,17 +29,20 @@
                         <interceptor-ref name="defaultStack"/>
                         <interceptor-ref name="SessionInterceptor"/>
                 </action>
-                <action name="newvoteValidate"
-                        class="action.vote.NewvoteValidate">
-                        <result name="input">newvote.jsp</result>
-                        <result name="success" type="chain">newVote</result>
-                        <interceptor-ref name="defaultStack" />
-                        <interceptor-ref name="SessionInterceptor" />
-                </action>
-                <action name="newVote" class="newVote">
-                        <result name="success">newvotecontext.jsp</result>
-                        <result name="addVoteError">newvote.jsp</result>
-                        <result name="invalid.token">login.jsp</result>
+                <!--<action name="newvoteValidate"-->
+                        <!--class="action.vote.NewvoteValidate">-->
+                        <!--<result name="counterror">/newvote.jsp</result>-->
+                        <!--<result name="titleerror">/newvote.jsp</result>-->
+                        <!--<result name="input">/newvo`te.jsp</result>-->
+                        <!--<result type="redirectAction">newVote</result>-->
+                        <!--<interceptor-ref name="defaultStack" />-->
+                        <!--<interceptor-ref name="SessionInterceptor" />-->
+                <!--</action>-->
+                <action name="newVote" class="action.vote.newVote">
+                        <result name="success">/newvotecontext.jsp</result>
+                        <result name="addVoteError">/newvote.jsp</result>
+                        <result name="invalid.token">/login.jsp</result>
+                        <result name="input" >/newvotecontext.jsp</result>
                         <interceptor-ref name="defaultStack" />
                         <interceptor-ref name="tokenSession" />
                         <interceptor-ref name="SessionInterceptor" />
@@ -71,18 +77,42 @@
                         <result type="chain">showVotingContext</result>
                 </action>
                 <action name="showVotingContext" class="action.vote.ShowVotingContext">
-                        <result>showvoting.jsp</result>
+                        <result>WEB-INF/showvoting/showvoting.jsp</result>
                 </action>
                 <action name="voting" class="action.vote.Voting">
                         <!--<result type="chain">addVoter</result>-->
                 </action>
                 <action name="showVotingResult" class="action.vote.ShowVotingResult">
-                        <result>showvotingresult.jsp</result>
+                        <result>WEB-INF/showvoting/showvotingresult.jsp</result>
                 </action>
                 <action name="findOneVote" class="action.vote.FindOneVote">
                         <result name="success" type="redirectAction">showVote</result>
                         <interceptor-ref name="defaultStack" />
                         <interceptor-ref name="SessionInterceptor" />
+                </action>
+                <action name="checkVoter" class="action.vote.CheckVoter">
+                        <result name="success" type="chain">showVotingResult</result>
+                </action>
+
+                <action name="addOneVoteContext" class="action.vote.AddOneVoteContext">
+                        <result type="redirectAction">findOneVote?voteId=${voteId}</result>
+                        <interceptor-ref name="defaultStack" />
+                        <interceptor-ref name="SessionInterceptor" />
+                </action>
+                <action name="updateVoteContext" class="action.vote.UpdateVoteContext">
+                        <result type="redirectAction">updateVote?type=${type}&amp;publish=${publish}</result>
+                        <interceptor-ref name="SessionInterceptor"/>
+                        <interceptor-ref name="defaultStack"/>
+                </action>
+                <action name="delVoteContext" class="action.vote.delVoteContext">
+                        <result type="redirectAction">findOneVote?voteId=${voteId}</result>
+                        <interceptor-ref name="defaultStack" />
+                        <interceptor-ref name="SessionInterceptor" />
+                </action>
+                <action name="updateVote" class="action.vote.UpdateVote">
+                        <result type="redirectAction">showVote</result>
+                        <interceptor-ref name="SessionInterceptor"/>
+                        <interceptor-ref name="defaultStack"/>
                 </action>
         </package>
 

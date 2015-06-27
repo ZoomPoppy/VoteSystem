@@ -1,20 +1,13 @@
 <%@ page contentType="text/html; charset=GBK"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
-<%--<style type="text/css">--%>
-    <%--<!----%>
-    <%--body {--%>
-        <%--background-color: #445de3;--%>
-    <%--}--%>
-    <%---->--%>
-    <%--a { font-size: 12pt; text-decoration: none}--%>
-<%--</style>--%>
+<style type="text/css">
+    <!--
+    -->
+    a { font-size: 12pt; text-decoration: none}
+</style>
 <body>
-<%--<a href="main.jsp"><s:property--%>
-        <%--value="%{getText('mainpage')}" /> </a>>>>--%>
-<%--<s:property value="%{getText('createvote')}" />--%>
-<%-->>>--%>
-<%--<s:property value="%{getText('createnewvote')}" />--%>
+<a href="main.jsp">主页</a>>>>创建投票
 <center>
     <br>
     <br>
@@ -26,16 +19,17 @@
         <s:fielderror/>
         <s:actionerror/>
     </font>
-    <s:form action="newvoteValidate" theme="simple">
+    <s:form action="newVote" theme="simple">
         <s:token />
         <table>
             <tr>
                 <td><s:text name="投票名称"/></td>
                 <td><s:textfield name="title" /></td>
             </tr>
+
             <tr>
                 <td><s:text name="选项个数"/></td>
-                <td><s:textfield name="contextcount" /></td>
+                <td><s:textfield name="contextCount" /></td>
             </tr>
             <tr>
                 <td><s:text name="投票类型"/></td>
@@ -47,7 +41,7 @@
             </tr>
             <tr>
                 <td>&nbsp;</td>
-                <td><s:submit key="下一步" /></td>
+                <td><s:submit value="下一步"/></td>
             </tr>
         </table>
     </s:form>

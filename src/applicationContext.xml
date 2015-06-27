@@ -149,11 +149,26 @@
               <property name="voteContextService" ref="voteContextService"/>
        </bean>
 
-       <bean id="NewvoteValidate" class="action.vote.NewvoteValidate">
-
-       </bean>
        <bean id="findOneVote" class="action.vote.FindOneVote">
               <property name="adminService" ref="adminService"/>
               <property name="voteService" ref="voteService"/>
+       </bean>
+       <bean id="checkVoter" class="action.vote.CheckVoter">
+              <property name="voterService" ref="voterService"/>
+       </bean>
+       <bean id="addOneVoteContext" class="action.vote.AddOneVoteContext">
+              <property name="voteContextService" ref="voteContextService"/>
+       </bean>
+       <bean id="delVoteContext" class="action.vote.delVoteContext">
+              <property name="voteContextService" ref="voteContextService"/>
+              <property name="voteService" ref="voteService"/>
+       </bean>
+       <bean id="updateVoteContext" class="action.vote.UpdateVoteContext">
+              <property name="voteService" ref="voteService"/>
+              <property name="voteContextService" ref="voteContextService"/>
+       </bean>
+       <bean id="updateVote" class="action.vote.UpdateVote">
+              <property name="voteService" ref="voteService"/>
+              <property name="adminService" ref="adminService"/>
        </bean>
 </beans>
