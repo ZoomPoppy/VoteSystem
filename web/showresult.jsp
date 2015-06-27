@@ -24,32 +24,32 @@
                 <tr bgcolor="#5e80e8" bordercolor="#5e80e8">
                     <td>
                         <div align="center">
-                            <s:property value="%{getText('voteid')}" />
+                            <s:property value="%{getText('投票ID')}" />
                         </div>
                     </td>
                     <td>
                         <div align="center">
-                            <s:property value="%{getText('votetitle')}" />
+                            <s:property value="%{getText('投票名称')}" />
                         </div>
                     </td>
                     <td>
                         <div align="center">
-                            <s:property value="%{getText('votecreatedate')}" />
+                            <s:property value="%{getText('创建日期')}" />
                         </div>
                     </td>
                     <td>
                         <div align="center">
-                            <s:property value="%{getText('votecreater')}" />
+                            <s:property value="%{getText('创建者')}" />
                         </div>
                     </td>
                     <td>
                         <div align="center">
-                            <s:property value="%{getText('votestate')}" />
+                            <s:property value="%{getText('投票状态')}" />
                         </div>
                     </td>
                     <td>
                         <div align="center">
-                            <s:property value="%{getText('typeofvote')}" />
+                            <s:property value="%{getText('投票种类')}" />
                         </div>
                     </td>
                     <td>
@@ -60,6 +60,11 @@
                     <td>
                         <div align="center">
                             <s:property value="%{getText('投票')}"/>
+                        </div>
+                    </td>
+                    <td>
+                        <div align="center">
+                            <s:property value="%{getText('删除投票')}"/>
                         </div>
                     </td>
                 </tr>
@@ -107,6 +112,13 @@
                         <a href='<s:url action="voting"><s:param name="voting" value="1"/>
 									<s:param name="voteId" value="voteId" /></s:url>' >
                             <s:property value="%{getText('投票')}" /></a>
+                    </div>
+                </td>
+                <td>
+                    <div align="center">
+                        <a href='<s:url action="delvote"><s:param name="delVot" value="1"/>
+									<s:param name="voteId" value="voteId" /></s:url>' >
+                            <s:property value="%{getText('删除')}" /></a>
                     </div>
                 </td>
             </tr>

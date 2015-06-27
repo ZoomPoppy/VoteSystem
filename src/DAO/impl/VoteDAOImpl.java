@@ -81,4 +81,9 @@ public class VoteDAOImpl extends HibernateDaoSupport implements VoteDAO {
         }
         else  return list;
     }
+
+    @Override
+    public void delVote(Vote vote) {
+        getHibernateTemplate().delete(vote);
+    }
 }

@@ -51,7 +51,7 @@
     window.location.href = "newvote.jsp";
   }
 </script>
-<input type="button" onclick="javascript:findVote()" value="查看所有投票">
+<input type="button" onclick="javascript:findVote()" value="所有投票">
 <script>
 
 
@@ -59,8 +59,9 @@
     window.location.href = "findVote";
   }
 </script>
-<%--<input type="button" onclick="javascript:a()" value="">--%>
-<%--<input type="button" onclick="javascript:a()" value="新建投票">--%>
+<input type="button" onclick="" value="查找投票"/>
+<input type="button" onclick="" value="更改密码"/>
+<input type="button" onclick="" value=""/>
 
 </body>
 </html>

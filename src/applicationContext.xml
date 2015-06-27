@@ -171,4 +171,8 @@
               <property name="voteService" ref="voteService"/>
               <property name="adminService" ref="adminService"/>
        </bean>
+       <bean id="delVote" class="action.vote.DelVote">
+              <property name="voteContextService" ref="voteContextService"/>
+              <property name="voteService" ref="voteService"/>
+       </bean>
 </beans>

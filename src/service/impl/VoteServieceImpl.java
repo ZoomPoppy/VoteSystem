@@ -64,4 +64,9 @@ public class VoteServieceImpl implements VoteService {
     public List<Vote> haveSameTitle(Vote vote) {
         return mVoteDAO.haveSameTitle(vote);
     }
+
+    @Override
+    public void delVote(Vote vote) {
+        mVoteDAO.delVote(vote);
+    }
 }

@@ -114,6 +114,9 @@
                         <interceptor-ref name="SessionInterceptor"/>
                         <interceptor-ref name="defaultStack"/>
                 </action>
+                <action name="delvote" class="action.vote.DelVote">
+                        <result name="success" type="chain">findVote</result>
+                </action>
         </package>
 
 
