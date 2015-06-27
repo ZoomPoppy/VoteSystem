@@ -28,6 +28,10 @@ public class newVote extends VoteRoot {
         String dateString  = format.format(date);
         vote.setCreatedate(dateString);
         List<Vote> list = voteService.haveSameTitle(vote);
+        if (title.equals("")||contextCount==null){
+            return ADDVOTEERROR;
+
+        }
         if (list!=null){
             addActionError(getText("voteExist"));
             return ADDVOTEERROR;
