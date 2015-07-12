@@ -1,3 +1,5 @@
+package action;
+
 import action.rootaction.AdminRoot;
 import enity.Admin;
 
@@ -11,6 +13,7 @@ public class CreatAdmin extends AdminRoot{
     private static final String CREATEADMINERROR = "createAdminError";
     @Override
     public String execute() throws Exception {
+
         Admin admin = adminService.findAdminByName(name);
         if (admin!=null){
             addActionError(getText("adminexist"));

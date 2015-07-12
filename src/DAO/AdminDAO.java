@@ -12,5 +12,6 @@ public interface AdminDAO {
     public void changePassword(Admin admin);
     public void updateLoginTime(Admin admin);
     public Admin findNameById(Integer adminid);
+
     public Admin findAdminByName(String name);
 }

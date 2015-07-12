@@ -11,24 +11,31 @@
 <html>
 <head>
     <title></title>
-  <style>
-    body{width: 100%;height: 100%;overflow: hidden;margin: 0;font-family: 'microsoft yahei';background-image:url(../images/login_bg.jpg);}  </style>
+  <%--<style>--%>
+    <%--body{width: 100%;height: 100%;overflow: hidden;margin: 0;font-family: 'microsoft yahei';background-image:url(../images/login_bg.jpg);}  </style>--%>
 </head>
 <body>
 <center>
-  <h1 style="color: #f5f6f7;">投票管理系统</h1>
+  <h1 >投票管理系统</h1>
 </center>
 现在的时间是：<br><br>
-<%
-  java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-  java.util.Date currentTime = new java.util.Date();
-  String strdate = formatter.format(currentTime);
-%>
-<%= strdate%>
+<SCRIPT LANGUAGE="JavaScript">
+
+  function gettime(){
+    var d =  new Date().toLocaleString();
+
+    document.getElementById("t").innerHTML =d;
+    window.setTimeout("gettime()",1000);
+  }
+  window.onload = gettime;
+</SCRIPT>
+<div id="t"></div>
+
+
 <br>
 <p>
   登陆者： <s:property value="%{getText('welcome')}" />
-						<STRONG><s:property value="#session.admin.name" /></STRONG>
+  <STRONG><s:property value="#session.admin.name" /></STRONG>
   <input type="button" onclick="javascript:logout()" value="注销">
   <script>
 
@@ -39,29 +46,47 @@
 </p>
 
 <p>
-登陆时间：<STRONG><s:property value="#session.admin.logintime" /></STRONG>
+  登陆时间：<STRONG><s:property value="#session.admin.logintime" /></STRONG>
 
 
 </p>
 
-<input type="button" onclick="javascript:newVote()" value="发起投票">
-<script>
+  <div>
 
-  function newVote(){
-    window.location.href = "newvote.jsp";
-  }
-</script>
-<input type="button" onclick="javascript:findVote()" value="所有投票">
-<script>
+    <p>
+      <input style="margin: 2cm" type="button" onclick="javascript:newVote()" value="发起投票">
+      <script>
+
+        function newVote(){
+          window.location.href = "newvote.jsp";
+        }
+      </script>
+      <input style="margin: 2cm" type="button" onclick="javascript:findVote()" value="所有投票">
+      <script>
 
 
-  function findVote(){
-    window.location.href = "findVote";
-  }
-</script>
-<input type="button" onclick="" value="查找投票"/>
-<input type="button" onclick="" value="更改密码"/>
-<input type="button" onclick="" value=""/>
+        function findVote(){
+          window.location.href = "findVote";
+        }
+      </script>
+    </p>
+
+    <p>
+      <input style="margin: 2cm" type="button" onclick="searchVote()" value="查找投票"/>
+      <script>
+        function searchVote(){
+          window.location.href="searchvote.jsp"
+        }
+      </script>
+      <input style="margin: 2cm" type="button" onclick="changePassword()" value="更改密码"/>
+      <script>
+        function changePassword(){
+          window.location.href="changePswd.jsp"
+        }
+      </script>
+    </p>
+
+  </div>
 
 </body>
 </html>

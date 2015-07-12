@@ -8,4 +8,6 @@ import enity.Voter;
 public interface VoterService {
     public void addVoter(Voter voter);
     public Voter findVoterByIp(String ip,Integer voteId);
+    public void delVoterByVoteId(Integer voteId);
+
 }

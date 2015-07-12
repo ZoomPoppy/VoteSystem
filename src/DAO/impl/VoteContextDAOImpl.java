@@ -43,14 +43,14 @@ public class VoteContextDAOImpl extends HibernateDaoSupport implements VoteConte
     @Override
     public Votecontext findVCCountByVCId(Votecontext votecontext) {
         Integer vcId = votecontext.getVotecontextId();
-        String hql = "from Votecontext as voteCOntext where voteContext.votecontextId=?";
+        String hql = "from Votecontext as voteContext where voteContext.votecontextId=?";
         List<Votecontext> list = (List<Votecontext>) getHibernateTemplate().find(hql,vcId);
         return list.get(0);
     }
 
     @Override
     public Long findTotalCountByVoteId(Integer voteId) {
-        String sql = "select sum(voteContext.count) form Votecontext as voteContext where VoteContext.voteId=?";
+        String sql = "select sum(voteContext.count) from Votecontext as voteContext where voteContext.voteId=?";
         List list = getHibernateTemplate().find(sql,voteId);
         return (Long)list.get(0);
     }

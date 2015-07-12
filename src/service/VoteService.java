@@ -18,4 +18,5 @@ public interface VoteService {
     public Long findVoteCount();
     public List<Vote> haveSameTitle(Vote vote);
     public void delVote(Vote vote);
+
 }

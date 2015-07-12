@@ -29,12 +29,11 @@ public class SearchVote extends VoteRoot {
                 }
                 else voteInfo.setPublish("关闭投票");
                 if (list.get(i).getType()==1){
-                    voteInfo.setTitle("单选");
+                    voteInfo.setType("单选");
                 }
-                else voteInfo.setTitle("多选");
+                else voteInfo.setType("多选");
                 voteInfo.setTitle(list.get(i).getTitle());
                 voteInfo.setVoteId(list.get(i).getVoteId());
-                voteInfo.setVoteId(list.get(i).getAdminId());
                 voteInfo.setAdminname(admin.getName());
                 voteInfo.setCreatedate(list.get(i).getCreatedate());
                 listInfo.add(voteInfo);

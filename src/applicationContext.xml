@@ -111,8 +111,9 @@
               <property name="voteService" ref="voteService"/>
        </bean>
        <bean id="logout" class="action.login.Logout"/>
-       <bean id="createAdmin" class="CreatAdmin">
+       <bean id="createAdmin" class="action.CreatAdmin">
               <property name="adminService" ref="adminService"/>
+              <property name="voteService" ref="voteService"/>
        </bean>
        <bean id="newVote" class="action.vote.newVote">
               <property name="voteService" ref="voteService"/>
@@ -140,7 +141,7 @@
               <property name="voteContextService" ref="voteContextService"/>
        </bean>
        <bean id="voting" class="action.vote.Voting">
-              <property name="voteContextService" ref="voteContextService"/>
+              <property name="adminService" ref="adminService"/>
               <property name="voteService" ref="voteService"/>
        </bean>
 
@@ -173,6 +174,15 @@
        </bean>
        <bean id="delVote" class="action.vote.DelVote">
               <property name="voteContextService" ref="voteContextService"/>
+              <property name="voteService" ref="voteService"/>
+       </bean>
+       <bean id="dealVoting" class="action.vote.dealVoting">
+              <property name="voteContextService" ref="voteContextService"/>
+              <property name="voteService" ref="voteService"/>
+       </bean>
+
+       <bean id="changePswd" class="action.login.ChangePswd">
+              <property name="adminService" ref="adminService"/>
               <property name="voteService" ref="voteService"/>
        </bean>
 </beans>

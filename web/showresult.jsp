@@ -54,7 +54,7 @@
                     </td>
                     <td>
                         <div align="center">
-                            <s:property value="%{getText('edit')}" />
+                            <s:property value="%{getText('±à¼­')}" />
                         </div>
                     </td>
                     <td>
@@ -102,7 +102,7 @@
                 </td>
                 <td>
                     <div align="center">
-                        <a href='<s:url action="findOneVote"><s:param name="flag" value="1"/>
+                        <a href='<s:url action="checkAdmin"><s:param name="flag" value="1"/>
 									<s:param name="voteId" value="voteId" /></s:url>' >
                             <s:property value="%{getText('±à¼­')}" /></a>
                     </div>
@@ -116,7 +116,7 @@
                 </td>
                 <td>
                     <div align="center">
-                        <a href='<s:url action="delvote"><s:param name="delVot" value="1"/>
+                        <a href='<s:url action="checkAdmin"><s:param name="flag" value="0"/>
 									<s:param name="voteId" value="voteId" /></s:url>' >
                             <s:property value="%{getText('É¾³ý')}" /></a>
                     </div>

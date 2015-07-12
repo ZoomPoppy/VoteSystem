@@ -19,7 +19,7 @@ public class ShowVotingResult extends VoteContextRoot {
     public String execute() {
         HttpSession session = ServletActionContext.getRequest().getSession();
         votingInfoList = new ArrayList();
-        Integer vid = ((Vote)session.getAttribute("vote")).getVoteId();
+        Integer vid = ((Vote)session.getAttribute("voting")).getVoteId();
         Long totalcount = voteContextService.findTotalCountByVoteId(vid);
         session.setAttribute("totalcount", totalcount);
         Vote vote = new Vote();

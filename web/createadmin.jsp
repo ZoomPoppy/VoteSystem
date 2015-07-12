@@ -26,17 +26,17 @@
       </tr>
       <tr>
         <td><s:text name="输入密码"/></td>
-        <td><s:textarea name="newpwd1"/></td>
+        <td><s:textfield name="newpwd1"/></td>
       </tr>
       <tr>
         <td><s:text name="再次输入密码"/></td>
-        <td><s:textarea name="newPwd2"/></td>
+        <td><s:textfield name="newpwd2"/></td>
       </tr>
-      <tr>
-        <td><s:submit key="submit"/></td>
-        <td><s:reset key="reset"/></td>
-      </tr>
+
     </table>
+    <tr>
+      <td><s:submit key="submit"/></td>
+    </tr>
   </s:form>
 
 </center>

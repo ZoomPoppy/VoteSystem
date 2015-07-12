@@ -10,6 +10,7 @@ import java.util.List;
  * Created by zz on 2015/6/19.
  */
 public class VoteRoot extends ActionSupport {
+    protected Integer flag;
     protected String title;
     protected String createdate;
     protected Integer voteId;
@@ -20,6 +21,14 @@ public class VoteRoot extends ActionSupport {
     protected Integer contextCount;
     protected List<VoteInfo> listInfo;
     protected AdminService adminService;
+
+    public Integer getFlag() {
+        return flag;
+    }
+
+    public void setFlag(Integer flag) {
+        this.flag = flag;
+    }
 
     public List<VoteInfo> getListInfo() {
         return listInfo;

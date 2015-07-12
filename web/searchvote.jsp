@@ -7,20 +7,17 @@
 --%>
 <%@ page contentType="text/html; charset=GBK"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<html><head><style type="text/css">
-  .top_div {
-    background: #008ead;
-    width: 100%;
-    height: 400px;
-  }</style>
-</head><body>
-<div class="top_div">
-  <br><br><br><br>
+<html><head>
+</head>
+<body>
+<a href="main.jsp">主页</a>
+>>>查找页面
+<div>
   <center>
     <br><br><br><br>
     <font color="red">
     </font>
-    <form id="searchVote" name="searchVote" action="searchVote" method="post">
+    <form  id="searchVote" name="searchVote" action="searchVote" method="post">
       输入搜索名称
       <input name="title" value="" id="searchVote_title" type="text">
       <input id="searchVote_submit" name="submit" type="submit">

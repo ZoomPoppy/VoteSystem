@@ -11,7 +11,7 @@ public class AdminRoot extends ActionSupport {
     protected String name;
     protected String password;
     protected String newpwd1;
-    protected String newPwd2;
+    protected String newpwd2;
     protected AdminService adminService;
     protected VoteService voteService;
 
@@ -55,11 +55,11 @@ public class AdminRoot extends ActionSupport {
         this.newpwd1 = newpwd1;
     }
 
-    public String getNewPwd2() {
-        return newPwd2;
+    public String getNewpwd2() {
+        return newpwd2;
     }
 
-    public void setNewPwd2(String newPwd2) {
-        this.newPwd2 = newPwd2;
+    public void setNewpwd2(String newpwd2) {
+        this.newpwd2 = newpwd2;
     }
 }

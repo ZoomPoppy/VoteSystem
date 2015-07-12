@@ -7,7 +7,7 @@
     a { font-size: 12pt; text-decoration: none}
 </style>
 <body>
-<a href="main.jsp">主页</a>>>>创建投票
+<a href="main.jsp">主页</a>>>>投票信息
 <center>
     <br>
     <br>

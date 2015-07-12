@@ -14,11 +14,11 @@
 
 <body>
 <a href="main.jsp">
-    <s:property value="%{getText('主页')}" />
+  <s:property value="%{getText('主页')}" />
 </a>>>>投票页面
 <br><br><br><br><br><br><br><br>
 <center>
-    投票已经关闭
+  你已经投过票
 
 </center>
 </body>

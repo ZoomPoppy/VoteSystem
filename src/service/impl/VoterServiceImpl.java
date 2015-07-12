@@ -27,4 +27,9 @@ public class VoterServiceImpl implements VoterService {
     public Voter findVoterByIp(String ip, Integer voteId) {
         return mVoterDAO.findVoterByIp(ip,voteId);
     }
+
+    @Override
+    public void delVoterByVoteId(Integer voteId) {
+        mVoterDAO.delVoterByVoteId(voteId);
+    }
 }

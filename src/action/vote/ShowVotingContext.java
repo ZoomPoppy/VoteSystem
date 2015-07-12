@@ -14,7 +14,7 @@ public class ShowVotingContext extends VoteContextRoot {
     @Override
     public String execute() throws Exception {
         HttpSession session = ServletActionContext.getRequest().getSession();
-        Vote vote = (Vote) session.getAttribute("vote");
+        Vote vote = (Vote) session.getAttribute("voting");
         List<Votecontext> list = voteContextService.findVoteContextByVoteId(vote);
         map = new HashMap();
         for (int i = 0;i<list.size();i++){
